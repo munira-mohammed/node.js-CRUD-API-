@@ -13,7 +13,7 @@ module.exports = (req, res) => {
       break;
     }
   
-    case (req.url === "/api/movies" && !regexV4.test(id)): {
+    case !regexV4.test(id): {
       res.writeHead(400, { "Content-Type": "application/json" });
       res.end(
         JSON.stringify({
